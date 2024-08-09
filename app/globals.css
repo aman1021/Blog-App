@@ -7,7 +7,8 @@
 }
 
 .scrollbar-hide{
-    display: none;
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
 }
 
 

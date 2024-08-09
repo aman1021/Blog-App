@@ -2,7 +2,7 @@ import { ConnectDB } from "@/lib/config/db";
 import BlogModel from "@/lib/models/BlogModel";
 const { NextResponse } = require("next/server");
 import { writeFile } from 'fs/promises';
-
+const fs = require("fs");
 const LoadDB = async () => {
     try {
         await ConnectDB();
@@ -63,4 +63,20 @@ export async function POST(request) {
         console.error('Error:', error);
         return NextResponse.json({ success: false, msg: 'An error occurred' }, { status: 500 });
     }
+}
+
+//creating api endpoint to delete the blog
+
+export async function DELETE(request){
+
+    const id = await request.nextUrl.searchParams.get('id');
+
+    const blog = await BlogModel.findById(id);
+
+    fs.unlink(`./public${blog.image}`, ()=>{})
+
+    await BlogModel.findByIdAndDelete(id);
+
+    return NextResponse.json({msg: 'Blog Deletd'})
+
 }
