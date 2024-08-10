@@ -62,7 +62,7 @@ const page = () => {
           <p className='text-xl mt-4'>Blog title</p>
           <input name='title' onChange={onChangeHandler} value={data.title} className='w-full sm:w-[500px] mt-4 px-4 py-3 border' type='text' placeholder='Type your title here...' required/>
 
-          <p className='text-xl mt-4'>Blog description</p>
+          <p className='text-xl mt-4'>Blog Content</p>
           <textarea name='description' onChange={onChangeHandler} value={data.description} className='w-full sm:w-[500px] mt-4 px-4 py-3 border' type='text' placeholder='Write content here...' rows={6} required/>
 
           <p className='text-xl mt-4'>Blog category</p>

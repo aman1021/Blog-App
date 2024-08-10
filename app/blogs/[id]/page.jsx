@@ -64,16 +64,12 @@ const page = ({ params }) => {
         </div>
       </div>
       <div className="mx-5 max-w-[800px] md:mx-auto mt-[-100px] mb-10">
-        <Image className="border-4 border-white" src={data.blog.image} width={1280} height={720} alt=""/>
-        <h1 className="my-8 text-[26px] font-semibold">Introduction:</h1>
-        <p>{data.blog.description}</p>
-        <h3 className="my-5 text-[18px] font-semibold">step1</h3>
-        <p className="my-3 ">some text</p>
-        <p className="my-3 ">some text</p>
+        <Image className="border-4 border-white mb-20" src={data.blog.image} width={1280} height={720} alt=""/>
+        <div className="blog-content" dangerouslySetInnerHTML={{__html:data.blog.description}}>
+        </div>
         <div className="my-24">
             <p className="text-black font-semibold my-4">Share this article on social media:</p>
             <div className="flex">
-            <Image src={assets.facebook_icon} alt='fb-icon' width={50}/>
             <Image src={assets.twitter_icon} alt='twt-icon' width={50}/>
             <Image src={assets.googleplus_icon} alt='g-icon' width={50}/>
             </div>
