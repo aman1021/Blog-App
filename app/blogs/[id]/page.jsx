@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
-const page = ({ params }) => {
+const Page = ({ params }) => {
   const [data, setData] = useState(null);
 
   //   console.log(params, typeof params.id)
@@ -43,7 +43,7 @@ const page = ({ params }) => {
           />
           </Link>
           <button className="flex items-center gap-2 font-medium py-1 px-3 sm:py-3 sm:px-6 border border-solid border-black shadow-[-7px_7px_0px_#000000]">
-            Get Started
+            Add Blog
             <Image src={assets.arrow} alt="arrow" />
           </button>
         </div>
@@ -68,7 +68,7 @@ const page = ({ params }) => {
         <div className="blog-content" dangerouslySetInnerHTML={{__html:data.blog.description}}>
         </div>
         <div className="my-24">
-            <p className="text-black font-semibold my-4">Share this article on social media:</p>
+            <p className="text-black text-xl font-semibold my-4">Share this article on social media:</p>
             <div className="flex">
             <Image src={assets.twitter_icon} alt='twt-icon' width={50}/>
             <Image src={assets.googleplus_icon} alt='g-icon' width={50}/>
@@ -82,4 +82,4 @@ const page = ({ params }) => {
   );
 };
 
-export default page;
+export default Page;
